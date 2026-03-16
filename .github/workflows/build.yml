@@ -1,0 +1,22 @@
+name: Build Yeeps Companion dylib
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build dylib
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: yeeps-companion-dylib
+          path: yeeps_companion.dylib
