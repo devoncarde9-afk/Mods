@@ -21,7 +21,7 @@ clang \
     -mmacosx-version-min=11.0 \
     -install_name @rpath/$PRODUCT \
     -o "$PRODUCT" \
-    "$SOURCE"
+  "yeeps_companion/$SOURCE"
 
 echo "✅  Built: $(pwd)/$PRODUCT"
 echo ""
